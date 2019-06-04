@@ -1,0 +1,24 @@
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li *ngFor="let image of images;let i=index;" data-target="#carousel" 
+        [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : '' }}"></li>
+
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="{{ (i == 0) ? 'carousel-item active' : 'carousel-item' }}" *ngFor="let image of images;let i=index;">
+      <img [src]="image.href" >
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>

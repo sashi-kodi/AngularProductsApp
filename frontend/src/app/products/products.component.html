@@ -1,0 +1,28 @@
+<section>
+  <ul class="products-list">
+    <li *ngFor="let prod of products" class="container">
+       
+       
+          <h6 class="product-name"> {{prod.name}}</h6>
+           <p class="product-price"> {{prod.priceRange.selling.high | currency}}</p>
+              <div class="image-holder" >
+                 <img [src]="prod.hero.href" alt="hero image of product" class="img-responsive open-carousel" (click)="prod.carousel=true;">
+                  
+                  <div id="overlay" *ngIf="prod.carousel" >
+                      <app-carousel [images]="prod.images" (clickOutside)="clickOutside(prod)"> </app-carousel>
+                   </div>
+
+                 
+              </div>
+              
+              
+        
+           
+           
+           
+       
+    </li>  
+  </ul>
+    
+    
+</section>
